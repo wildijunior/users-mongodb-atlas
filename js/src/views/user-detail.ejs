@@ -1,0 +1,65 @@
+<%- include('layouts/header') -%>
+
+    <section class="container">
+        <h1 class="text-center">User <%= usuario.name %> Edit </h1>
+
+        <table class="table table-warning table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">
+                        <%= usuario._id %>
+                    </th>
+                    <td>
+                        <%= usuario.name %>
+                    </td>
+                    <td>
+                        <%= usuario.age %>
+                    </td>
+                    <td>
+                        <%= usuario.email %>
+                    </td>
+                    <td>
+                        <%= usuario.address %>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <h1 class="text-center">New Fields Value</h1>
+
+        <form action="/users/<%= usuario._id %>/update" method="post">
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="userNewName" placeholder="Nome">
+                <label for="userNewName">Nome</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" name="userNewAge" placeholder="Idade">
+                <label for="userNewAge">Idade</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" name="userNewEmail" placeholder="Email">
+                <label for="userNewEmail">Email</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="userNewAddress" placeholder="Endereço">
+                <label for="userNewAddress">Endereço</label>
+            </div>
+            <button type="submit" class='btn btn-success'>Update</button>
+        </form>
+
+    </section>
+
+    <%- include('layouts/footer') -%>

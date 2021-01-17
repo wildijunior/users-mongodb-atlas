@@ -1,0 +1,25 @@
+html,
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+nav {
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+tr{
+  vertical-align: middle;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+#btn-insert {
+  margin-top: 20px;
+}
+
+#btn-delete {
+  margin-top: 5px;
+}

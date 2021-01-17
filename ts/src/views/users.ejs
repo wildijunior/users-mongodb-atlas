@@ -1,0 +1,57 @@
+<%- include('layouts/header'); -%>
+
+    <section class="container text-center">
+        <h1>USERS LIST</h1>
+
+        <% if (dados.length> 0) { %>
+        <table class="table table-warning table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Edit</th>
+                </tr>
+            </thead>
+
+                <% dados.forEach(dado=> { %>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <%= dado._id %>
+                            </th>
+                            <td>
+                                <%= dado.name %>
+                            </td>
+                            <td>
+                                <%= dado.age %>
+                            </td>
+                            <td>
+                                <%= dado.email %>
+                            </td>
+                            <td>
+                                <%= dado.address %>
+                            </td>
+
+                            <td>
+                                <a href="/users/<%= dado._id %> " class='btn btn-info'>Update</a>
+                                <form action="/users/<%= dado._id %>/delete" method="post">
+                                    <button id="btn-delete" style="display:right;" type="submit"
+                                        class="btn btn-outline-danger">Delete</button>
+                                </form>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                    <% }) %>
+                        <% }else{ %>
+                            <p>No data found!</p>
+                            <a href="/insert" class="btn btn-success" style='margin-bottom: 10px;'>Insert User</a>
+                            <% } %>
+        </table>
+
+    </section>
+
+    <%- include('layouts/footer'); -%>

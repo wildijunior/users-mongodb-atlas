@@ -1,0 +1,70 @@
+<%- include('layouts/header'); -%>
+
+    <section class="container text-center">
+        <h1>Update User</h1>
+
+        <table class="table table-warning table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">
+                        <%= usuario._id %>
+                    </th>
+                    <td>
+                        <%= usuario.name %>
+                    </td>
+                    <td>
+                        <%= usuario.age %>
+                    </td>
+                    <td>
+                        <%= usuario.email %>
+                    </td>
+
+                    <td>
+                        <%= usuario.address %>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+
+        <div>
+            <h3>Insert New Data+</h3>
+            <form action="/users/<%= usuario._id %>/update" method="post">
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="newName" placeholder="Name">
+                    <label for="newName">Name</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" name="newAge" placeholder="Age">
+                    <label for="newAge">Age</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" name="newEmail" placeholder="Email">
+                    <label for="newEmail">Email</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="newAddress" placeholder="Address">
+                    <label for="newAddress">Address</label>
+                </div>
+
+                <button id="btn-insert" type="submit" class='btn btn-success'>Insert</button>
+
+            </form>
+
+        </div>
+    </section>
+
+    <%- include('layouts/footer'); -%>

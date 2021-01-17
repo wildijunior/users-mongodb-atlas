@@ -1,0 +1,42 @@
+html,
+body {
+  background-color: #263238;
+  color: #fafafa;
+  font-family: "Nunito", sans-serif;
+}
+
+nav {
+  letter-spacing: 3px;
+  font-size: 18px;
+}
+
+form {
+  color: #263238;
+}
+.nav-link,
+.navbar-brand {
+  color: #263238 !important;
+}
+
+.bg-dark {
+  background-color: #ffc107 !important;
+}
+
+.btn-danger {
+  margin-top: 5px;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: #ffc107;
+  color: #263238;
+  text-align: center;
+}
